@@ -9,21 +9,14 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
-//    @IBOutlet weak var nameTxt: UILabel!
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//
-//    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "back" {
-//            var ThirdViewController = segue.destination as! ThirdViewController
-//            nameTxt.text = ThirdViewController.text
-//        }
-//    }
-//
-
-  
+        @IBOutlet weak var name: UILabel!
+        var value = ""
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            name.text = value
+            // Do any additional setup after loading the view.
+        }
+        
+        
 
 }

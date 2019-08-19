@@ -17,7 +17,14 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
     }
         @IBAction func sendAction(_ sender: Any) {
             print(textField.text)
+             performSegue(withIdentifier: "NameView", sender: self)
 
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NameView" {
+            var viewController = segue.destination as! WelcomeViewController
+            viewController.value = textField.text!
+        }
     }
 
     

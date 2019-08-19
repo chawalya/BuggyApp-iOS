@@ -30,7 +30,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
                                 <connections>
                                     <action selector="sendAction:" destination="6uy-RW-zmC" eventType="primaryActionTriggered" id="4my-e3-m9Q"/>
                                     <segue destination="aQ5-jZ-zdZ" kind="show" identifier="NameView" id="Dlj-km-BeT"/>
@@ -76,7 +76,7 @@
                         <viewLayoutGuide key="safeArea" id="MbQ-hc-WtR"/>
                     </view>
                     <connections>
-                        <outlet property="nameTxt" destination="Ani-oc-VU5" id="23z-0j-eHj"/>
+                        <outlet property="name" destination="Ani-oc-VU5" id="6I2-6a-heZ"/>
                         <segue destination="6KL-ba-5z2" kind="unwind" identifier="back" unwindAction="nameActionWithSegue:" id="E97-Oa-amj"/>
                     </connections>
                 </viewController>

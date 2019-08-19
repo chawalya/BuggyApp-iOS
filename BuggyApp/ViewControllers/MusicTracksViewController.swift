@@ -45,6 +45,9 @@ class MusicTracksViewController: UIViewController {
       let selectedTrack = sender as? Track {
         ////
       viewController.track = selectedTrack
+        print("--------------------")
+
+        print(selectedTrack)
     }
   }
 }
@@ -59,6 +62,7 @@ extension MusicTracksViewController: UITableViewDataSource {
       return UITableViewCell()
     }
     let track: Track = tracks[indexPath.item]
+//    print(self.tracks[indexPath.item])
     cell.configCell(track: track)
     return cell
   }
@@ -73,5 +77,6 @@ extension MusicTracksViewController: UITableViewDelegate {
     ///
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    
   }
 }
