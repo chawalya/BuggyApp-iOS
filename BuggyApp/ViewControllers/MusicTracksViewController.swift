@@ -27,6 +27,7 @@ class MusicTracksViewController: UIViewController {
       switch result {
       case .success(let tracks):
         self?.tracks = tracks
+//        print(self?.tracks)
       case .failure(let error):
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -37,9 +38,12 @@ class MusicTracksViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showDetail",
+//    if segue.identifier == "showDetail",
+    if segue.identifier == "next",
+
       let viewController = segue.destination as? MusicTrackDetailViewController,
       let selectedTrack = sender as? Track {
+        ////
       viewController.track = selectedTrack
     }
   }
@@ -47,7 +51,7 @@ class MusicTracksViewController: UIViewController {
 
 extension MusicTracksViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return tracks.isEmpty ? 0 : 10
+    return tracks.isEmpty ? 0 : tracks.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,6 +69,8 @@ extension MusicTracksViewController: UITableViewDelegate {
     return UITableView.automaticDimension
   }
   
+    
+    ///
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
   }
